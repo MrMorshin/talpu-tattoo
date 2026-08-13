@@ -469,23 +469,3 @@ function updateStudioStatus() {
 }
 
 document.addEventListener('DOMContentLoaded', updateStudioStatus);
-
-// --- MOBILE HAMBURGER MENU TOGGLE ---
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navRight = document.querySelector('.nav-right');
-
-    if (hamburger && navRight) {
-        // Toggle the menu open/closed when clicking the hamburger icon
-        hamburger.addEventListener('click', () => {
-            navRight.classList.toggle('active');
-        });
-
-        // Automatically close the menu when any link inside it is clicked
-        navRight.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navRight.classList.remove('active');
-            });
-        });
-    }
-});
