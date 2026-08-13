@@ -476,11 +476,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navRight = document.querySelector('.nav-right');
 
     if (hamburger && navRight) {
+        // Toggle the menu open/closed when clicking the hamburger icon
         hamburger.addEventListener('click', () => {
             navRight.classList.toggle('active');
         });
 
-        // Close menu automatically when a link is clicked
+        // Automatically close the menu when any link inside it is clicked
         navRight.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navRight.classList.remove('active');
