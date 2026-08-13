@@ -629,3 +629,63 @@ body::after {
     box-shadow: 0 0 15px rgba(255, 102, 0, 0.4) !important;
     transform: translateY(-2px);
 }
+
+/* --- MOBILE MENU OVERLAY FIX --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block !important;
+        background: transparent !important;
+        border: none !important;
+        color: #fff !important;
+        font-size: 1.8rem !important;
+        cursor: pointer !important;
+        z-index: 1001;
+    }
+
+    .nav-right {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(10, 10, 10, 0.98) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 22px !important;
+        margin: 0 !important;
+        padding: 40px 20px !important;
+        transform: translateY(-100%) !important;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 1000 !important;
+        pointer-events: none !important;
+    }
+
+    .nav-right.active {
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+
+    .nav-right > a, 
+    .nav-right .dropdown > button {
+        font-size: 1.1rem !important;
+        letter-spacing: 3px !important;
+    }
+}
+
+/* --- RTL FOOTER LOCATION BOX FIX --- */
+[dir="rtl"] .footer-location-box {
+    text-align: right !important;
+}
+
+[dir="rtl"] .footer-location-box h3,
+[dir="rtl"] .footer-location-box p {
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+[dir="rtl"] .map-buttons {
+    justify-content: flex-end !important;
+}
