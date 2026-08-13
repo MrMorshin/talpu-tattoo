@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap');
+
+/* --- 1. TYPOGRAPHY & GLOBAL RESETS --- */
+h1, h2, h3, nav a, .dropdown button, .dropdown-content a, .btn-book, .btn-consult, .btn-whatsapp, .ig-handle a {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.6);
+}
+html { height: 100%; background-color: #050505; scroll-behavior: smooth; }
+html, body { width: 100%; overflow-x: hidden; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+::selection { background-color: #e60000; color: #ffffff; }
+
+/* --- 2. BODY & CUSTOM CURSOR --- */
+body {
+    min-height: 100vh;
+    background-color: transparent !important; 
+    color: #f5f5f5;
+    line-height: 1.6;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><polygon points="2,2 8,12 12,8" fill="%23e60000"/><rect x="7" y="7" width="10" height="14" transform="rotate(-45 12 14)" fill="%23222222" stroke="%23f5f5f5" stroke-width="1.5"/><path d="M15,15 L28,28 L32,24 L19,11 Z" fill="%23111111" stroke="%23f5f5f5" stroke-width="1.5"/><rect x="18" y="18" width="6" height="10" transform="rotate(-45 21 23)" fill="%23e60000" stroke="%23f5f5f5" stroke-width="1"/><rect x="23" y="13" width="6" height="10" transform="rotate(-45 26 18)" fill="%23e60000" stroke="%23f5f5f5" stroke-width="1"/><line x1="12" y1="8" x2="28" y2="12" stroke="%23f5f5f5" stroke-width="2"/></svg>') 2 2, auto;
+}
+a, button, .gallery-grid video { cursor: pointer; }
+
+/* --- 3. CINEMATIC VIDEO BACKGROUND & OVERLAY --- */
+.video-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: -1; }
+
+/* ==========================================================
+   SLIDE-UP SCROLL ANIMATIONS
+   ========================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px); /* Pushes elements down initially */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slides them back up into place */
+}
+
+/* --- 5. HEADER & FULL-WIDTH SPREAD NAVIGATION BAR (DESKTOP) --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, rgba(22, 22, 22, 0.25) 0%, rgba(13, 13, 13, 0.3) 100%) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 102, 0, 0.15);
+    padding: 8px 30px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+header nav { display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; max-width: 100% !important; margin: 0 auto !important; }
+.logo { display: flex !important; align-items: center !important; }
+.logo img { height: 45px !important; width: auto !important; max-height: none !important; display: block !important; }
+.nav-right { display: flex !important; align-items: center !important; justify-content: space-between !important; flex-grow: 1 !important; margin-left: 60px !important; margin-right: 30px !important; gap: 15px !important; }
+
+/* --- ULTRA-CLEAN LUXURY MINIMALIST HEADER --- */
+.nav-right > a, 
+.nav-right .dropdown > button {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    padding: 6px 4px !important;
+    border-radius: 0 !important;
+    color: #cccccc !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-decoration: none !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Hover Effect: Sleek underline accent and text glow */
+.nav-right > a:hover, 
+.nav-right .dropdown > button:hover {
+    color: #ffffff !important;
+    border-bottom-color: #ff6600 !important;
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+    transform: translateY(-1px);
+}
+
+/* Keep your primary booking button striking as the main CTA */
+.nav-right .btn-book {
+    background: #ff6600 !important;
+    border: 1px solid #ff6600 !important;
+    border-radius: 4px !important;
+    color: #ffffff !important;
+    padding: 8px 18px !important;
+    font-weight: 700 !important;
+}
+
+.nav-right .btn-book:hover {
+    background: #e55c00 !important;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.5) !important;
+    border-bottom-color: #e55c00 !important;
+    transform: translateY(-1px) !important;
+}
+
+.hamburger { display: none !important; } /* Hidden by default on desktop */
+
+/* --- 6. "BOOK NOW" & ACTION BUTTONS --- */
+.btn-book { background-color: #e60000; padding: 10px 24px; border-radius: 4px; font-weight: bold; color: white; transition: 0.3s; text-decoration: none; }
+.btn-book:hover { background-color: #ff1a1a; }
+
+/* --- 7. DROP-DOWN MENU --- */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content { display: none; position: absolute; background-color: #161616; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); z-index: 1; top: 100%; left: 0; border-radius: 4px; overflow: hidden; border: 1px solid #222; }
+.dropdown-content a { color: #f5f5f5; padding: 12px 16px; display: block; margin-left: 0; text-transform: none; }
+.dropdown-content a:hover { background-color: #262626; color: #e60000; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* --- 8. HERO BANNER SECTION --- */
+#hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: transparent !important; padding: 0 20px; }
+#hero h1 { font-size: 55px; letter-spacing: 5px; margin-bottom: 15px; text-transform: uppercase; }
+#hero h2 { font-size: 18px; font-weight: 300; color: #aaaaaa; margin-bottom: 40px; max-width: 700px; }
+.btn-consult { background-color: transparent; color: #f5f5f5; padding: 14px 35px; border: 2px solid #e60000; border-radius: 4px; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; text-decoration: none; }
+.btn-consult:hover { background-color: #e60000; color: #ffffff; }
+
+/* --- 9. SECTIONS (SERVICES, ABOUT, GALLERY, FAQ) --- */
+#services, .about-section, #gallery, .faq-section { padding: 80px 20px; background: transparent !important; margin: 0 auto; max-width: 1200px; text-align: center; }
+#services h2, .about-section h2, #gallery h2, .faq-section h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 50px; color: #ffffff; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.service-card { background: transparent !important; padding: 40px 30px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; transition: 0.3s ease; }
+.service-card:hover { border-color: #e60000; transform: translateY(-5px); background: rgba(10, 10, 10, 0.2) !important; }
+.service-card h3 { font-size: 22px; color: #f5f5f5; margin-bottom: 15px; text-transform: uppercase; }
+.service-card p { font-size: 15px; color: #aaaaaa; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+.gallery-grid video { width: 100%; height: 400px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.08); transition: 0.4s ease; }
+.gallery-grid video:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.8); border-color: #666; }
+.about-section p { color: #aaa; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto 30px auto; }
+.divider-line { width: 60px; height: 2px; background-color: #ff3333; margin: 0 auto; }
+.faq-container { max-width: 900px; margin: 0 auto; text-align: left; }
+.faq-item { background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%); border: 1px solid rgba(255, 102, 0, 0.25); border-radius: 10px; padding: 25px; margin-bottom: 20px; transition: all 0.3s ease; }
+.faq-item:hover { border-color: #ff6600; box-shadow: 0 5px 20px rgba(255, 102, 0, 0.15); }
+.faq-item h3 { color: #fff; font-size: 1.15rem; margin-bottom: 10px; }
+.faq-item p { color: #ccc; font-size: 0.95rem; margin: 0; line-height: 1.6; }
+
+/* --- 10. FOOTER & MISC --- */
+footer { background: rgba(10, 10, 10, 0.3) !important; text-align: center; padding: 80px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+footer h2 { color: #ffffff; margin-bottom: 20px; letter-spacing: 2px; }
+footer p { color: #aaaaaa; margin-bottom: 10px; }
+.btn-whatsapp { display: inline-block; margin-top: 20px; background-color: #25D366; color: white; padding: 12px 28px; border-radius: 4px; font-weight: bold; text-transform: uppercase; transition: 0.3s; text-decoration: none; }
+.btn-whatsapp:hover { background-color: #1ebe57; transform: scale(1.05); }
+.scroll-to-top { position: fixed; bottom: 60px; right: 140px; background-color: #e60000; color: #fff; width: 80px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; z-index: 99; transition: 0.3s ease; border: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); }
+.scroll-to-top:hover { background-color: #fff; color: #e60000; box-shadow: 0 0 15px rgba(230, 0, 0, 0.8); }
+
+/* --- 11. RTL OVERRIDES ([dir="rtl"]) --- */
+[dir="rtl"] nav a, [dir="rtl"] .dropdown button { margin-left: 0 !important; margin-right: 30px !important; }
+[dir="rtl"] .dropdown-content { left: auto !important; right: 0 !important; text-align: right; }
+[dir="rtl"] .faq-container { text-align: right !important; }
+[dir="rtl"] .timeline-text, [dir="rtl"] .timeline-content-box { text-align: right; }
+
+/* --- 12. INSTAGRAM FEED SECTION --- */
+.instagram-section { padding: 60px 20px; text-align: center; }
+.instagram-container h2 { margin-bottom: 10px; color: #fff; }
+.ig-handle { margin-bottom: 30px; font-size: 1.1rem; }
+.ig-handle a { color: #e60000; text-decoration: none; font-weight: bold; transition: 0.3s ease; }
+.ig-handle a:hover { color: #ff1a1a; }
+
+/* --- 13. ARTIST PROFILE PAGES --- */
+.artist-page-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0d0d0d; z-index: -2; }
+.artist-profile { padding-top: 75px; min-height: 80vh; display: flex; align-items: center; justify-content: center; gap: 40px; max-width: 1100px; margin: 0 auto; box-sizing: border-box; }
+.artist-image img { width: 100%; max-width: 450px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); object-fit: cover; }
+.artist-bio { max-width: 500px; }
+.artist-bio h1 { font-size: 3rem; margin-bottom: 10px; }
+.artist-bio h2 { font-size: 1.2rem; color: #e60000; margin-bottom: 20px; }
+.artist-bio p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
+.artist-portfolio { padding: 50px 20px 100px; text-align: center; }
+
+/* --- 14. WIZARD MODAL --- */
+.wizard-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 100000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+.wizard-content { background: #121212; border: 1px solid rgba(255, 102, 0, 0.4); border-radius: 12px; width: 100%; max-width: 500px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); color: #ffffff; position: relative; box-sizing: border-box; }
+.wizard-close { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #aaa; font-size: 1.5rem; cursor: pointer; }
+.wizard-close:hover { color: #fff; }
+.wizard-step { display: none; }
+.wizard-step.active-step { display: block; }
+.wizard-step h3 { margin-top: 0; margin-bottom: 20px; font-size: 1.3rem; color: #ff6600; text-align: center; }
+.wizard-options-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 25px; }
+.wizard-option-btn { background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 12px 18px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 1rem; transition: all 0.2s ease; }
+.wizard-option-btn:hover, .wizard-option-btn.selected { background: #22150c; border-color: #ff6600; color: #ff6600; }
+.wizard-submit-btn { background: #ff6600; border: none; color: #ffffff; width: 100%; padding: 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; text-align: center; text-decoration: none; display: block; transition: background 0.2s ease; }
+.wizard-submit-btn:hover { background: #e65c00; }
+.section-divider { height: 1px; background: linear-gradient(90deg, rgba(255,102,0,0), rgba(255,102,0,0.8) 50%, rgba(255,102,0,0)); width: 100%; margin: 50px 0; border: none; display: block; }
+
+/* --- 15. STUDIO MUSIC PLAYER WIDGET --- */
+.music-player-widget { position: fixed; bottom: 55px; left: 100px; z-index: 99999; background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%); border: 1px solid rgba(255, 102, 0, 0.35); border-radius: 12px; padding: 16px 20px; min-height: 70px; display: flex; align-items: center; gap: 16px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 102, 0, 0.1); backdrop-filter: blur(10px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); max-width: 260px; }
+.music-player-widget:hover { border-color: #ff6600; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 102, 0, 0.25); transform: translateY(-2px); }
+.music-toggle-btn { background: #121212; border: 1px solid #ff6600; color: #ff6600; width: 44px; height: 44px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1rem; transition: all 0.2s ease; flex-shrink: 0; }
+.music-toggle-btn:hover { background: #ff6600; color: #ffffff; box-shadow: 0 0 12px rgba(255, 102, 0, 0.6); }
+.music-info { display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+.music-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin: 0 0 2px 0; }
+.music-title { color: #ffffff; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; margin: 0 0 4px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.music-bottom-row { display: flex; align-items: center; gap: 8px; }
+.music-status { color: #888; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin: 0; transition: color 0.2s ease; }
+.music-player-widget.playing .music-status { color: #ff6600; }
+.equalizer { display: flex; align-items: flex-end; gap: 2px; height: 10px; width: 14px; }
+.equalizer span { display: block; width: 2.5px; background: #444; height: 20%; border-radius: 1px; transition: background 0.3s ease; }
+.music-player-widget.playing .equalizer span { background: #ff6600; }
+.music-player-widget.playing .equalizer span:nth-child(1) { animation: eqBar 0.5s infinite ease-in-out alternate; }
+.music-player-widget.playing .equalizer span:nth-child(2) { animation: eqBar 0.35s infinite ease-in-out alternate; }
+.music-player-widget.playing .equalizer span:nth-child(3) { animation: eqBar 0.45s infinite ease-in-out alternate; }
+@keyframes eqBar { 0% { height: 20%; } 100% { height: 100%; } }
+
+/* --- 16. AFTERCARE TIMELINE & FLASH CARDS --- */
+.aftercare-section { max-width: 900px; margin: 40px auto; padding: 50px 20px; text-align: center; }
+.aftercare-section h2 { color: #fff; font-size: 2rem; margin-bottom: 10px; }
+.timeline-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+.timeline-tab { background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%) !important; border: 1px solid rgba(255, 102, 0, 0.3) !important; color: #aaa !important; padding: 14px 28px !important; border-radius: 10px !important; cursor: pointer !important; font-size: 1rem !important; font-weight: 600 !important; transition: all 0.3s ease !important; }
+.timeline-tab.active { background: #ff6600 !important; border-color: #ff6600 !important; color: #fff !important; box-shadow: 0 0 20px rgba(255, 102, 0, 0.5) !important; }
+.timeline-content-box { background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%); border: 1px solid rgba(255, 102, 0, 0.4); border-radius: 14px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); text-align: left; max-width: 800px; margin: 0 auto; }
+.timeline-stage { display: none !important; align-items: center; gap: 30px; }
+.timeline-stage.active { display: flex !important; animation: fadeInStage 0.4s ease forwards; }
+@keyframes fadeInStage { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- LARGER AFTERCARE & TIMELINE IMAGES --- */
+.aftercare-section img, .timeline-content-box img, .timeline-stage img {
+    max-width: 100% !important;
+    max-height: 1000px !important; 
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* --- 17. PERFECTLY CENTERED ARTIST HEADINGS & FLASH GRID --- */
+.flash-section { max-width: 1200px !important; margin: 0 auto !important; padding: 40px 20px 80px 20px !important; }
+.artist-flash-group { display: flex !important; flex-direction: column !important; align-items: center !important; width: 100% !important; margin-bottom: 50px !important; }
+.artist-flash-group h3.artist-heading { color: #ffffff !important; font-size: 1.2rem !important; text-align: center !important; background: linear-gradient(90deg, transparent, rgba(255, 102, 0, 0.25), transparent) !important; border-bottom: 2px solid #ff6600 !important; padding: 10px 25px !important; margin: 0 auto 20px auto !important; width: fit-content !important; min-width: 260px !important; border-radius: 6px !important; letter-spacing: 2px !important; display: block !important; }
+.flash-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 25px !important; max-width: 950px !important; margin: 0 auto !important; width: 100% !important; }
+.flash-card { background: #161616 !important; border-radius: 10px !important; padding: 15px !important; text-align: center !important; border: 1px solid rgba(255, 102, 0, 0.25) !important; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; width: 260px !important; flex: 0 0 260px !important; }
+.flash-img-wrapper { width: 100% !important; height: 200px !important; background-color: #ffffff !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 6px !important; margin-bottom: 12px !important; overflow: hidden !important; padding: 10px !important; box-sizing: border-box !important; }
+.flash-card img, .flash-img-wrapper img { max-width: 100% !important; max-height: 100% !important; object-fit: contain !important; display: block !important; margin: 0 auto !important; }
+.flash-card h3 { color: #fff !important; font-size: 1rem !important; margin: 8px 0 12px 0 !important; }
+.btn-flash { display: inline-block !important; background-color: #ff6600 !important; color: #fff !important; padding: 10px 16px !important; border-radius: 4px !important; text-decoration: none !important; font-weight: bold !important; font-size: 0.9rem !important; width: 100% !important; transition: background-color 0.3s ease !important; }
+.btn-flash:hover { background-color: #e55b00 !important; }
+
+/* ==========================================================
+   EMERGENCY CONTENT RESTORE & PRELOADER OVERRIDE 
+   ========================================================== */
+/* This completely disables the preloader block so it can never hide your site */
+#preloader {
+    display: none !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+#preloader img, 
+.preloader-logo {
+    display: none !important;
+}
+
+/* ==========================================================
+   FOOTER MAP & HOURS STYLING
+   ========================================================== */
+.footer-location-box {
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+}
+
+.footer-location-box h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.footer-location-box p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.map-container {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 102, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================
+   STUDIO TRUST SIGNALS & QUICK STATS BAR
+   ========================================================== */
+.stats-bar {
+    max-width: 1100px;
+    margin: -20px auto 40px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(22, 22, 22, 0.85) 0%, rgba(13, 13, 13, 0.9) 100%);
+    border: 1px solid rgba(255, 102, 0, 0.25);
+    border-radius: 12px;
+    padding: 25px 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6600;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 8px rgba(255, 102, 0, 0.3);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #cccccc;
+}
+
+/* ==========================================================
+   FLOATING STICKY WHATSAPP BUTTON
+   ========================================================== */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 55px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    animation: pulseWhatsapp 2s infinite;
+}
+
+.floating-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulseWhatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ==========================================================
+   PRE-CARE SECTION STYLING (HOW TO PREPARE)
+   ========================================================== */
+.precare-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.precare-section h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+
+.precare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.precare-card {
+    background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%);
+    border: 1px solid rgba(255, 102, 0, 0.25);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.precare-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6600;
+    box-shadow: 0 12px 25px rgba(255, 102, 0, 0.15);
+}
+
+.precare-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.precare-card h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.precare-card p {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================
+   CUSTOM THEMED SCROLLBAR
+   ========================================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+    background: #ff6600;
+    border-radius: 10px;
+    border: 2px solid #0d0d0d; /* Creates a clean padded look */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e65c00;
+}
+
+/* ==========================================================
+   CUSTOM ANIMATED CURSOR
+   ========================================================== */
+@media (pointer: fine) {
+    /* Hide the default mouse cursor only on computers, keep it on touch screens */
+    body, a, button, .service-card, .precare-card, .flash-card, input, .hamburger { 
+        cursor: none !important; 
+    }
+}
+
+#cursor-dot, #cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    display: none; 
+}
+
+#cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ff6600;
+    border-radius: 50%;
+}
+
+#cursor-ring {
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgba(255, 102, 0, 0.4);
+    border-radius: 50%;
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* When the user hovers over a clickable link/card */
+#cursor-ring.hover-active {
+    width: 55px;
+    height: 55px;
+    border-color: rgba(255, 102, 0, 0.9);
+    background-color: rgba(255, 102, 0, 0.1);
+}
+
+/* ==========================================================
+   3D PARALLAX TILT BASE
+   ========================================================== */
+.service-card, .precare-card, .flash-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+    will-change: transform;
+}
+
+/* ==========================================================
+   IMAGE LIGHTBOX (FULL SCREEN FLASH)
+   ========================================================== */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100000; /* Stays above the cursor and navigation */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox-overlay.active {
+    opacity: 1;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 102, 0, 0.4);
+    transform: scale(0.95);
+    transition: transform 0.1s ease; /* Faster transition so mouse tracking doesn't lag */
+    cursor: none; 
+    transform-style: preserve-3d; /* Allows the 3D effect to work on the big image */
+    will-change: transform;
+}
+
+#lightbox-overlay.active #lightbox-img {
+    transform: scale(1);
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3.5rem;
+    color: #ffffff;
+    cursor: none; /* Uses custom cursor */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+}
+
+#lightbox-close:hover {
+    color: #ff6600;
+    transform: scale(1.1);
+}
+
+/* ==========================================================
+   CINEMATIC FILM GRAIN (NOISE OVERLAY)
+   ========================================================== */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Ensures it doesn't block any clicks */
+    z-index: 99990; /* Sits below your custom cursor and Lightbox, but above the background */
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+    opacity: 0.9; 
+}
+
+/* --- LIVE STUDIO STATUS & MAP BUTTONS --- */
+@keyframes pulseDot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.map-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-map {
+    background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%) !important;
+    border: 1px solid rgba(255, 102, 0, 0.3) !important;
+    color: #ffffff !important;
+    padding: 10px 18px !important;
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-family: 'Cinzel', serif !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn-map:hover {
+    background: #ff6600 !important;
+    border-color: #ff6600 !important;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4) !important;
+    transform: translateY(-2px);
+}

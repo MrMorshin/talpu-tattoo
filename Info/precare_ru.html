@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подготовка к сеансу | Talpu Tattoo</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)return;n.push=1;n.t=!0;n.ent='2ds';
+      t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../mobile.css" media="(max-width: 768px)">
+
+    <link rel="alternate" hreflang="he" href="https://www.talputattoo.com/Info/precare.html">
+    <link rel="alternate" hreflang="en" href="https://www.talputattoo.com/Info/precare_en.html">
+    <link rel="alternate" hreflang="ru" href="https://www.talputattoo.com/Info/precare_ru.html">
+</head>
+<body>
+    <div id="preloader"><img src="../Images/Talpu_logo.png" alt="Loading" class="preloader-logo"></div>
+    <video class="video-background" autoplay loop muted playsinline preload="none"><source src="../Images/Backround.mp4" type="video/mp4"></video>
+    <div class="video-overlay"></div>
+    
+ <header>
+    <nav>
+        <div class="logo"><a href="../index_ru.html"><img src="../Images/Talpu_logo.png" alt="Talpu Tattoo Logo"></a></div>
+        <button class="hamburger" aria-label="Toggle Navigation">☰</button>
+        <div class="nav-right">
+            <div class="dropdown">
+                <button>🌐 Русский ▾</button>
+                <div class="dropdown-content">
+                    <a href="precare.html">🇮🇱 עברית (IL)</a>
+                    <a href="precare_en.html">🇺🇸 English (US)</a>
+                    <a href="precare_ru.html">🇷🇺 Русский (RU)</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>Художники ▾</button>
+                <div class="dropdown-content">
+                    <a href="../Artists/dudi_ru.html">Дуди Таль</a>
+                    <a href="../Artists/michael_ru.html">Михаил Синельников</a>
+                    <a href="../Artists/ksenia_ru.html">Ксения Прохорова</a>
+                </div>
+            </div>
+            <a href="../index_ru.html#services">Услуги</a>
+            <a href="../index_ru.html#gallery">Галерея</a>
+            <div class="dropdown">
+                <button>Информация ▾</button>
+                <div class="dropdown-content">
+                    <a href="flash_ru.html">Эскизы (Flash)</a>
+                    <a href="precare_ru.html">Подготовка к сеансу</a>
+                    <a href="aftercare_ru.html">Уход за тату</a>
+                    <a href="faq_ru.html">Частые вопросы</a>
+                </div>
+            </div>
+            <a href="../index_ru.html#contact" class="btn-book">Записаться</a>
+        </div>
+    </nav>
+</header>
+
+    <section id="pre-care" class="precare-section fade-in" style="padding-top: 100px;">
+        <h2>КАК ПОДГОТОВИТЬСЯ К СЕАНСУ</h2>
+        <p class="section-subtitle">Простые правила для комфортного сеанса и идеального заживления вашей татуировки.</p>
+        
+        <div class="precare-grid">
+            <div class="precare-card">
+                <span class="precare-icon">😴</span>
+                <h3>Хороший сон</h3>
+                <p>Выспитесь накануне визита. Отдохнувший организм намного легче переносит процесс нанесения.</p>
+            </div>
+            <div class="precare-card">
+                <span class="precare-icon">🍽️</span>
+                <h3>Плотно поесть</h3>
+                <p>Поешьте за 1–2 часа до сеанса, чтобы поддержать стабильный уровень сахара в крови.</p>
+            </div>
+            <div class="precare-card">
+                <span class="precare-icon">💧</span>
+                <h3>Пить воду</h3>
+                <p>Пейте достаточно воды за день до сеанса. Увлажненная кожа лучше принимает пигмент.</p>
+            </div>
+            <div class="precare-card">
+                <span class="precare-icon">🚫</span>
+                <h3>Без алкоголя</h3>
+                <p>Воздержитесь от алкоголя за 24 часа до сеанса, чтобы избежать повышенной кровоточивости.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="musicPlayerWidget" class="music-player-widget">
+        <audio id="bgAudio" loop preload="auto"><source src="../Images/rock-music.mp3" type="audio/mp3"></audio>
+        <button type="button" id="musicToggleBtn" class="music-toggle-btn" aria-label="Play/Pause Music">
+            <span id="musicIconSymbol" style="font-size: 0.8rem; line-height: 1; margin-right: 1px;">▶</span>
+        </button>
+        <div class="music-info">
+            <span class="music-label">Now Vibe</span>
+            <p class="music-title">Talpu Rock Audio</p>
+            <div class="music-bottom-row">
+                <p id="musicStatusText" class="music-status">Paused</p>
+                <div class="equalizer"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=972585766211&text=Здравствуйте,%20Talpu%20Tattoo!%20У%20меня%20есть%20вопрос." class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="../script.js"></script>
+</body>
+</html>
