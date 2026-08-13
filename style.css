@@ -30,14 +30,14 @@ a, button, .gallery-grid video { cursor: pointer; }
    ========================================================== */
 .fade-in {
     opacity: 0;
-    transform: translateY(40px); /* Pushes elements down initially */
+    transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0); /* Slides them back up into place */
+    transform: translateY(0);
 }
 
 /* --- 5. HEADER & FULL-WIDTH SPREAD NAVIGATION BAR (DESKTOP) --- */
@@ -81,7 +81,6 @@ header nav { display: flex !important; justify-content: space-between !important
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* Hover Effect: Sleek underline accent and text glow */
 .nav-right > a:hover, 
 .nav-right .dropdown > button:hover {
     color: #ffffff !important;
@@ -90,7 +89,6 @@ header nav { display: flex !important; justify-content: space-between !important
     transform: translateY(-1px);
 }
 
-/* Keep your primary booking button striking as the main CTA */
 .nav-right .btn-book {
     background: #ff6600 !important;
     border: 1px solid #ff6600 !important;
@@ -107,7 +105,7 @@ header nav { display: flex !important; justify-content: space-between !important
     transform: translateY(-1px) !important;
 }
 
-.hamburger { display: none !important; } /* Hidden by default on desktop */
+.hamburger { display: none !important; }
 
 /* --- 6. "BOOK NOW" & ACTION BUTTONS --- */
 .btn-book { background-color: #e60000; padding: 10px 24px; border-radius: 4px; font-weight: bold; color: white; transition: 0.3s; text-decoration: none; }
@@ -152,8 +150,6 @@ footer h2 { color: #ffffff; margin-bottom: 20px; letter-spacing: 2px; }
 footer p { color: #aaaaaa; margin-bottom: 10px; }
 .btn-whatsapp { display: inline-block; margin-top: 20px; background-color: #25D366; color: white; padding: 12px 28px; border-radius: 4px; font-weight: bold; text-transform: uppercase; transition: 0.3s; text-decoration: none; }
 .btn-whatsapp:hover { background-color: #1ebe57; transform: scale(1.05); }
-.scroll-to-top { position: fixed; bottom: 60px; right: 140px; background-color: #e60000; color: #fff; width: 80px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; z-index: 99; transition: 0.3s ease; border: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); }
-.scroll-to-top:hover { background-color: #fff; color: #e60000; box-shadow: 0 0 15px rgba(230, 0, 0, 0.8); }
 
 /* --- 11. RTL OVERRIDES ([dir="rtl"]) --- */
 [dir="rtl"] nav a, [dir="rtl"] .dropdown button { margin-left: 0 !important; margin-right: 30px !important; }
@@ -223,7 +219,6 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
 .timeline-stage.active { display: flex !important; animation: fadeInStage 0.4s ease forwards; }
 @keyframes fadeInStage { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- LARGER AFTERCARE & TIMELINE IMAGES --- */
 .aftercare-section img, .timeline-content-box img, .timeline-stage img {
     max-width: 100% !important;
     max-height: 1000px !important; 
@@ -249,7 +244,6 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
 /* ==========================================================
    EMERGENCY CONTENT RESTORE & PRELOADER OVERRIDE 
    ========================================================== */
-/* This completely disables the preloader block so it can never hide your site */
 #preloader {
     display: none !important;
     background-color: transparent !important;
@@ -462,7 +456,7 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
 ::-webkit-scrollbar-thumb {
     background: #ff6600;
     border-radius: 10px;
-    border: 2px solid #0d0d0d; /* Creates a clean padded look */
+    border: 2px solid #0d0d0d;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #e65c00;
@@ -472,7 +466,6 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
    CUSTOM ANIMATED CURSOR
    ========================================================== */
 @media (pointer: fine) {
-    /* Hide the default mouse cursor only on computers, keep it on touch screens */
     body, a, button, .service-card, .precare-card, .flash-card, input, .hamburger { 
         cursor: none !important; 
     }
@@ -503,7 +496,6 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
     transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-/* When the user hovers over a clickable link/card */
 #cursor-ring.hover-active {
     width: 55px;
     height: 55px;
@@ -532,7 +524,7 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
     height: 100vh;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 100000; /* Stays above the cursor and navigation */
+    z-index: 100000;
     display: none;
     align-items: center;
     justify-content: center;
@@ -551,9 +543,9 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
     border: 2px solid rgba(255, 102, 0, 0.4);
     transform: scale(0.95);
-    transition: transform 0.1s ease; /* Faster transition so mouse tracking doesn't lag */
+    transition: transform 0.1s ease;
     cursor: none; 
-    transform-style: preserve-3d; /* Allows the 3D effect to work on the big image */
+    transform-style: preserve-3d;
     will-change: transform;
 }
 
@@ -567,7 +559,7 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
     right: 40px;
     font-size: 3.5rem;
     color: #ffffff;
-    cursor: none; /* Uses custom cursor */
+    cursor: none;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
     transition: color 0.3s ease, transform 0.3s ease;
     line-height: 1;
@@ -588,8 +580,8 @@ body::after {
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /* Ensures it doesn't block any clicks */
-    z-index: 99990; /* Sits below your custom cursor and Lightbox, but above the background */
+    pointer-events: none;
+    z-index: 99990;
     background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
     opacity: 0.9; 
 }
@@ -630,7 +622,7 @@ body::after {
     transform: translateY(-2px);
 }
 
-/* --- MOBILE MENU OVERLAY FIX --- */
+/* --- PERFECTLY CENTERED MOBILE MENU & DROPDOWNS --- */
 @media (max-width: 768px) {
     .hamburger {
         display: block !important;
@@ -654,13 +646,14 @@ body::after {
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        gap: 22px !important;
+        gap: 18px !important;
         margin: 0 !important;
         padding: 40px 20px !important;
         transform: translateY(-100%) !important;
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         z-index: 1000 !important;
         pointer-events: none !important;
+        overflow-y: auto !important;
     }
 
     .nav-right.active {
@@ -668,24 +661,77 @@ body::after {
         pointer-events: auto !important;
     }
 
+    /* Force all main menu links and buttons to center */
+    .nav-right > a, 
+    .nav-right .dropdown {
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
     .nav-right > a, 
     .nav-right .dropdown > button {
         font-size: 1.1rem !important;
         letter-spacing: 3px !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* Convert desktop absolute dropdowns into clean, centered mobile accordions */
+    .nav-right .dropdown-content {
+        position: static !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        margin-top: 6px !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    /* Expand dropdown when tapped/active on mobile */
+    .nav-right .dropdown:hover .dropdown-content,
+    .nav-right .dropdown:focus-within .dropdown-content,
+    .nav-right .dropdown:active .dropdown-content {
+        max-height: 250px !important;
+    }
+
+    .nav-right .dropdown-content a {
+        text-align: center !important;
+        padding: 6px 0 !important;
+        color: #aaaaaa !important;
+        font-size: 0.95rem !important;
+        width: 100% !important;
+    }
+
+    .nav-right .dropdown-content a:hover {
+        color: #ff6600 !important;
+        background: transparent !important;
     }
 }
 
-/* --- RTL FOOTER LOCATION BOX FIX --- */
+/* --- FOOLPROOF RTL FOOTER LOCATION BOX FIX --- */
 [dir="rtl"] .footer-location-box {
     text-align: right !important;
 }
 
 [dir="rtl"] .footer-location-box h3,
-[dir="rtl"] .footer-location-box p {
+[dir="rtl"] .footer-location-box p,
+html[lang="he"] .footer-location-box h3,
+html[lang="he"] .footer-location-box p {
     text-align: right !important;
     direction: rtl !important;
 }
 
-[dir="rtl"] .map-buttons {
+[dir="rtl"] .map-buttons,
+html[lang="he"] .map-buttons {
     justify-content: flex-end !important;
 }
