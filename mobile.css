@@ -2,18 +2,21 @@
    MOBILE STYLES (mobile.css)
    ========================================================== */
 @media (max-width: 768px) {
-    /* Slim Transparent Header matching PC */
+    /* RESTORED GLASSY TRANSLUCENT HEADER */
     header {
         position: sticky !important; top: 0 !important; height: 55px !important;
-        padding: 0 8px !important; /* Pushed to the edge */ box-sizing: border-box !important;
-        background: linear-gradient(135deg, rgba(22, 22, 22, 0.95) 0%, rgba(13, 13, 13, 0.98) 100%) !important;
+        padding: 0 15px !important; box-sizing: border-box !important;
+        background: linear-gradient(135deg, rgba(22, 22, 22, 0.25) 0%, rgba(13, 13, 13, 0.3) 100%) !important;
         backdrop-filter: blur(10px) !important; border-bottom: 1px solid rgba(255, 102, 0, 0.15) !important;
         z-index: 10000 !important;
     }
     
-    nav { height: 55px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; width: 100% !important; padding: 0 !important; }
+    nav { height: 55px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    
+    /* LOGO RTL ALIGNMENT FIX */
     .logo, .logo a { display: flex !important; align-items: center !important; height: 100% !important; margin: 0 !important; padding: 0 !important; }
-    .logo img { height: 42px !important; max-height: 42px !important; width: auto !important; display: block !important; margin: 0 !important; }
+    [dir="rtl"] nav .logo a, [dir="rtl"] nav a.logo { margin-right: 0 !important; margin-left: 0 !important; }
+    .logo img { height: 38px !important; max-height: 38px !important; width: auto !important; display: block !important; margin: 0 !important; }
 
     /* HAMBURGER BUTTON */
     .hamburger-menu {
@@ -26,23 +29,23 @@
     .hamburger-menu.active .bar:nth-child(2) { opacity: 0; }
     .hamburger-menu.active .bar:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
-    /* THE MENU OVERLAY - FIXED */
+    /* THE MENU OVERLAY - FULL SCREEN RTL FIX */
     .nav-right {
         display: flex !important;
-        position: fixed !important; top: 55px !important; left: 0 !important;
-        width: 100vw !important; height: calc(100vh - 55px) !important;
+        position: fixed !important; top: 55px !important; left: 0 !important; right: 0 !important;
+        width: 100% !important; max-width: 100% !important; height: calc(100vh - 55px) !important;
+        margin: 0 !important; /* KILLS THE RTL GAP SHIFT */
         background: rgba(10, 10, 10, 0.98) !important; backdrop-filter: blur(15px) !important;
         flex-direction: column !important; align-items: center !important; justify-content: flex-start !important;
-        padding-top: 40px !important; z-index: 9999 !important; overflow-y: auto !important;
+        padding-top: 40px !important; z-index: 9999 !important; overflow-x: hidden !important; overflow-y: auto !important;
         
-        /* Hidden State */
         opacity: 0 !important;
         pointer-events: none !important;
         transform: translateY(-20px) !important;
         transition: all 0.3s ease !important;
     }
+    [dir="rtl"] .nav-right { margin-right: 0 !important; margin-left: 0 !important; }
     
-    /* Active State */
     .nav-right.active {
         opacity: 1 !important;
         pointer-events: auto !important;
@@ -50,18 +53,11 @@
     }
 
     .nav-right > a, .nav-right .dropdown { width: 100% !important; text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
-    
-    /* Cleaned up menu links without borders */
-    .nav-right > a, .nav-right .dropdown > button { 
-        font-size: 1.1rem !important; letter-spacing: 2px !important; 
-        background: transparent !important; border: none !important; 
-        box-shadow: none !important; border-bottom: none !important;
-        margin: 5px 0 !important; padding: 12px 0 !important; color: #f5f5f5 !important; 
-    }
+    .nav-right > a, .nav-right .dropdown > button { font-size: 1.1rem !important; letter-spacing: 2px !important; background: transparent !important; border: none !important; box-shadow: none !important; margin: 5px 0 !important; padding: 12px 0 !important; color: #f5f5f5 !important; }
     
     .nav-right .dropdown-content { position: static !important; background: transparent !important; box-shadow: none !important; border: none !important; width: 100% !important; display: flex !important; flex-direction: column !important; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
     .nav-right .dropdown:hover .dropdown-content, .nav-right .dropdown:active .dropdown-content, .nav-right .dropdown:focus-within .dropdown-content { max-height: 250px !important; }
-    .nav-right .dropdown-content a { padding: 8px 0 !important; color: #aaaaaa !important; font-size: 0.95rem !important; }
+    .nav-right .dropdown-content a { padding: 8px 0 !important; color: #aaaaaa !important; font-size: 0.95rem !important; border: none !important; }
     
     #hero h1 { font-size: 2.2rem !important; line-height: 1.2; }
     #hero h2 { font-size: 0.95rem !important; padding: 0 10px; }
