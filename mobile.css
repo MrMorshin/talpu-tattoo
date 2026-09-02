@@ -66,13 +66,14 @@
     .music-player-widget { bottom: 15px !important; left: 15px !important; max-width: 170px !important; min-height: 45px !important; padding: 6px 10px !important; }
     .music-toggle-btn { width: 30px !important; height: 30px !important; }
 
-    /* --- ARTIST PROFILE MOBILE FIXES (FORCED FULL SIZE) --- */
+    /* --- ARTIST PROFILE MOBILE FIXES (FORCED FULL SIZE & OVERRIDE DESKTOP CONSTRAINTS) --- */
     .artist-profile {
         flex-direction: column !important;
         display: flex !important;
         padding: 20px 10px !important;
         margin-top: 10px !important;
         align-items: center !important;
+        max-width: 100% !important;
     }
     
     .artist-image {
@@ -80,11 +81,14 @@
         display: flex !important;
         justify-content: center !important;
         margin-bottom: 25px !important;
+        float: none !important;
+        max-width: none !important;
     }
     
+    .artist-profile img,
     .artist-image img {
-        width: 90vw !important;
-        max-width: 400px !important;
+        width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
         max-height: 450px !important;
         object-fit: cover !important;
@@ -93,6 +97,7 @@
         border: 1px solid rgba(255, 102, 0, 0.4) !important;
         display: block !important;
         margin: 0 auto !important;
+        float: none !important;
     }
     
     .artist-bio {
@@ -104,10 +109,11 @@
         border: 1px solid rgba(255, 102, 0, 0.3) !important;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
         width: 100% !important;
-        max-width: 500px !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
         text-align: center !important;
         margin: 0 auto !important;
+        float: none !important;
     }
     
     .artist-bio h1 { font-size: 2.2rem !important; margin-bottom: 5px !important; }
