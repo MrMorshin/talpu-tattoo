@@ -776,7 +776,7 @@ body::after {
         color: #ff6600 !important;
         background: transparent !important;
     }
-}
+
 
 /* --- FOOLPROOF RTL FOOTER LOCATION BOX FIX --- */
 [dir="rtl"] .footer-location-box {

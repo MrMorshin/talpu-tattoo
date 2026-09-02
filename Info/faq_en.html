@@ -17,7 +17,7 @@
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../style.css?v=4"> 
     <link rel="stylesheet" href="../mobile.css" media="(max-width: 768px)">
     <link rel="alternate" hreflang="he" href="https://www.talputattoo.com/Info/faq.html">
     <link rel="alternate" hreflang="en" href="https://www.talputattoo.com/Info/faq_en.html">
@@ -44,9 +44,9 @@
             <div class="dropdown">
                 <button>Artists ▾</button>
                 <div class="dropdown-content">
-                    <a href="../Artists/dudi_en.html">Dudi Tal</a>
+                    <a href="../Artists/dudi_en.html">Dudi Bar</a>
                     <a href="../Artists/michael_en.html">Michael Sinelnikov</a>
-                    <a href="../Artists/ksenia_en.html">Ksenia Prohorova</a>
+                    <a href="../Artists/ksenia_en.html">Ksenia (Somadamantine Ink)</a>
                 </div>
             </div>
             <a href="../index_en.html#services">Services</a>
@@ -60,7 +60,7 @@
                     <a href="faq_en.html">FAQ</a>
                 </div>
             </div>
-            <a href="../index_en.html#contact" class="btn-book">Book Now</a>
+            <a href="#contact" class="btn-book">Book Now</a>
         </div>
     </nav>
 </header>
@@ -69,12 +69,12 @@
         <div class="faq-container">
             <h2 class="fade-in" style="margin-top: 20px; text-align: center; margin-bottom: 40px;">FREQUENTLY ASKED QUESTIONS</h2>
             <div class="faq-item fade-in">
-                <h3>01. How do I book an appointment or consultation?</h3>
-                <p>You can reach out directly via WhatsApp using our consultation wizard or contact buttons. We will review your concept, reference ideas, and placement to map out your custom piece before locking in your session.</p>
+                <h3>01. How do I book an appointment?</h3>
+                <p>We work strictly by appointment. Reach out directly via WhatsApp using our consultation wizard. We do not do catalog copies—every piece is custom. Send us your concept, references, and estimated size so we can map out your design before locking in your session.</p>
             </div>
             <div class="faq-item fade-in">
                 <h3>02. Do I need to pay a deposit to secure a date?</h3>
-                <p>Yes, a deposit is required to lock in your appointment slot. This goes directly toward the final cost of your tattoo and ensures dedicated time is reserved for your custom design and prep.</p>
+                <p>Yes, a deposit is required to lock in your appointment slot and cover initial sketch preparation. This deposit is fully deducted from the final cost of your tattoo.</p>
             </div>
             <div class="faq-item fade-in">
                 <h3>03. How should I prepare for my tattoo session?</h3>
@@ -82,26 +82,88 @@
             </div>
             <div class="faq-item fade-in">
                 <h3>04. How does the cover-up and scar camouflage process work?</h3>
-                <p>Our studio specializes in cover-ups and scar integration. During your consultation, our artists analyze your existing ink or scar tissue texture to design a custom high-contrast or textured piece that seamlessly hides the old work.</p>
+                <p>Our studio specializes in cover-ups and scar integration, but not every tattoo can be covered with anything. During your consultation, we analyze your existing ink or scar tissue to design a custom, high-contrast composition that seamlessly hides the old work.</p>
             </div>
             <div class="faq-item fade-in">
                 <h3>05. What is the studio's policy on minimum age?</h3>
-                <p>In accordance with Israeli law and studio safety standards, clients must be at least 18 years old with a valid government-issued photo ID (Teudat Zehut or passport) to get tattooed.</p>
+                <p>In strict accordance with Israeli law and our studio's safety standards, clients must be at least 18 years old. You must present a valid physical government-issued ID (Teudat Zehut or passport) on the day of the session.</p>
             </div>
             <div class="faq-item fade-in">
                 <h3>06. Can I bring guests with me to my session?</h3>
-                <p>To maintain a clean, focused, and calm working environment for our artists, we kindly ask that you attend your appointment solo, or bring a maximum of one guest.</p>
+                <p>To maintain a sterile, focused, and calm working environment for our artists, we require clients to attend their appointment solo, or bring an absolute maximum of one guest.</p>
             </div>
             <div class="faq-item fade-in">
                 <h3>07. How are tattoo prices calculated?</h3>
-                <p>Pricing depends on the size, complexity, detail level, placement, and estimated time required. Custom pieces and large sleeves are quoted per session or project basis during your consultation.</p>
+                <p>Pricing is determined after consultation and depends on the size, placement, complexity, and estimated time required. Custom pieces and large sleeves are quoted on a per-session or project basis.</p>
             </div>
             <div class="faq-item fade-in">
-                <h3>08. What should I do if I need to reschedule my appointment?</h3>
-                <p>We require at least 48 hours notice if you need to reschedule your session so we can reallocate your artist's preparation time. Last-minute cancellations may result in forfeiture of the deposit.</p>
+                <h3>08. What should I do if I need to reschedule?</h3>
+                <p>We require a minimum of 48 hours' notice for cancellations or rescheduling, so we can reallocate your artist's time. Last-minute cancellations will result in the forfeiture of your deposit.</p>
             </div>
         </div>
     </section>
+
+    <footer id="contact">
+        <div class="footer-location-box">
+            <h3>מפות ושעות פעילות / Location & Hours / Часы работы</h3>
+            <p id="studioStatusContainer" style="margin-bottom: 10px; font-weight: bold;"><span id="studioStatus">Loading status...</span></p>
+            <p>📍 Krauze St 1, Netanya (Postal Code: 4240110)</p>
+            <p>🕒 Sun, Mon, Wed, Thu: 11:00 - 19:30 | Tue, Fri: 11:00 - 15:00 | Sat: Closed</p>
+            
+            <div class="map-buttons">
+                <a href="https://waze.com/ul?q=Krauze+St+1,+Netanya&navigate=yes" target="_blank" class="btn-map">🚗 Open in Waze</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Krauze+St+1,+Netanya" target="_blank" class="btn-map">🗺️ Google Maps</a>
+            </div>
+
+            <div class="map-container" style="margin-top: 15px;">
+                <iframe src="https://maps.google.com/maps?q=Krauze+St+1,+Netanya&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <h2>CONTACT US</h2>
+        <p>Location: Netanya 📍</p>
+        <p>Phone: 09-7739992 | 09-8619907</p>
+        <p>Instagram: <a href="https://www.instagram.com/somadamantineink" target="_blank" style="color: inherit; text-decoration: underline;">@somadamantineink</a> | <a href="https://www.instagram.com/talpu_tattoo" target="_blank" style="color: inherit; text-decoration: underline;">@talpu_tattoo</a></p>
+        <a href="https://api.whatsapp.com/send?phone=972585766211&text=Hi%20Talpu%20Tattoo!%20I%20would%20like%20to%20book%20a%20consultation." class="btn-whatsapp" target="_blank">WhatsApp Us</a>
+    </footer>
+
+    <div id="consultationWizard" class="wizard-modal">
+        <div class="wizard-content">
+            <button class="wizard-close" id="closeWizard">&times;</button>
+            <div class="wizard-step active-step" data-step="1">
+                <h3>Select Your Artist</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Dudi Bar">Dudi Bar <span style="font-size:0.8rem; color:#888; display:block;">Founder & Veteran Artist (Since 1999)</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Ksenia (Somadamantine Ink)">Ksenia (Somadamantine Ink) <span style="font-size:0.8rem; color:#888; display:block;">Fine Line, Blackwork & Micro-realism</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Michael Sinelnikov">Michael Sinelnikov <span style="font-size:0.8rem; color:#888; display:block;">Custom Illustrative & Precision Lines</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Any Available Artist">No Preference / General Consultation</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="2">
+                <h3>Select Tattoo Style</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Fine Line / Blackwork">Fine Line & Blackwork</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Cover-Up / Rework">Cover-Up / Tattoo Rework</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Large-Scale / Freehand">Large-Scale / Custom Freehand</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Realistic / Illustrative">Realistic / Illustrative Design</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="3">
+                <h3>Select Body Placement</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Arm / Sleeve">Arm / Sleeve</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Leg / Thigh">Leg / Thigh</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Chest / Back">Chest / Back</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Other / Not sure yet">Other / Not sure yet</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="4">
+                <h3>Ready to Connect</h3>
+                <p style="color: #bbb; text-align: center; margin-bottom: 20px; font-size: 0.95rem;">We have compiled your consultation details. Click below to open WhatsApp with your custom request!</p>
+                <div id="wizardSummary" style="background: #1a1a1a; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 0.9rem; border-left: 3px solid #ff6600;"></div>
+                <a href="#" id="whatsappSubmitBtn" class="wizard-submit-btn" target="_blank">Send Request via WhatsApp 💬</a>
+            </div>
+        </div>
+    </div>
 
     <div id="musicPlayerWidget" class="music-player-widget">
         <audio id="bgAudio" loop preload="auto"><source src="../Images/rock-music.mp3" type="audio/mp3"></audio>

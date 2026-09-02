@@ -81,7 +81,7 @@ function initTalpuSite() {
                 if (path.includes("_en")) targetPage = "index_en.html";
                 else if (path.includes("_ru")) targetPage = "index_ru.html";
                 
-                let prefix = path.includes("/Artists/") ? "../" : "";
+                let prefix = path.includes("/Artists/") || path.includes("/Info/") ? "../" : "";
                 window.location.href = prefix + targetPage + "?book=true";
             }
         });
@@ -179,7 +179,7 @@ function initTalpuSite() {
     let baseName = filename.replace(/(_en|_ru)\.html$/, ".html");
     let targetHe, targetEn, targetRu;
 
-    if (path.includes("/Artists/") || path.includes("\\Artists\\")) {
+    if (path.includes("/Artists/") || path.includes("\\Artists\\") || path.includes("/Info/") || path.includes("\\Info\\")) {
         let baseWithoutExt = baseName.replace(".html", "");
         targetHe = baseWithoutExt + ".html";
         targetEn = baseWithoutExt + "_en.html";
@@ -437,35 +437,96 @@ if (window.matchMedia("(pointer: fine)").matches) {
     }
 })();
 
-// --- LIVE STUDIO OPEN/CLOSED CHECKER ---
+// --- 14. DYNAMIC TIMEZONE STUDIO STATUS WIDGET ---
 function updateStudioStatus() {
-    const statusEl = document.getElementById('studioStatus');
-    if (!statusEl) return;
+    const statusElement = document.getElementById("studioStatus");
+    if (!statusElement) return;
 
-    try {
-        // Get current date/time mapped explicitly to Israel time zone
-        const israelTimeStr = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jerusalem' });
-        const israelDate = new Date(israelTimeStr);
-        const day = israelDate.getDay(); // 0 = Sunday, 4 = Thursday, 5 = Friday, 6 = Saturday
-        const hour = israelDate.getHours();
-        const minute = israelDate.getMinutes();
-        const currentTimeVal = hour * 60 + minute;
+    // Get current time locked to Israel timezone
+    const israelNow = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Jerusalem" }));
+    const day = israelNow.getDay(); // 0 = Sunday, 1 = Monday...
+    const hour = israelNow.getHours();
+    const minute = israelNow.getMinutes();
+    const currentTime = hour + minute / 60;
 
-        const openTime = 10 * 60;  // 10:00 AM
-        const closeTime = 20 * 60; // 20:00 (8:00 PM)
+    // Real Talpu Hours: 11:00 to 19:30 = 19.5 | 11:00 to 15:00 = 15.0
+    const schedule = {
+        0: { open: 11, close: 19.5, name: { he: "ראשון", en: "Sunday", ru: "воскресенье" } },
+        1: { open: 11, close: 19.5, name: { he: "שני", en: "Monday", ru: "понедельник" } },
+        2: { open: 11, close: 15, name: { he: "שלישי", en: "Tuesday", ru: "вторник" } },
+        3: { open: 11, close: 19.5, name: { he: "רביעי", en: "Wednesday", ru: "среду" } },
+        4: { open: 11, close: 19.5, name: { he: "חמישי", en: "Thursday", ru: "четверг" } },
+        5: { open: 11, close: 15, name: { he: "שישי", en: "Friday", ru: "пятницу" } },
+        6: null // Saturday Closed
+    };
 
-        // Open Sunday (0) through Thursday (4) between 10:00 and 20:00
-        const isOpen = (day >= 0 && day <= 4) && (currentTimeVal >= openTime && currentTimeVal < closeTime);
+    // Detect page language
+    const lang = document.documentElement.lang || 'he';
 
-        if (isOpen) {
-            statusEl.innerHTML = '<span style="color: #25D366; display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background-color: #25D366; border-radius: 50%; box-shadow: 0 0 8px #25D366; display: inline-block; animation: pulseDot 1.5s infinite;"></span>Open Now • Visit Us</span>';
-        } else {
-            statusEl.innerHTML = '<span style="color: #aaaaaa; display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background-color: #666; border-radius: 50%; display: inline-block;"></span>Closed • Opens Sunday at 10:00</span>';
-        }
-    } catch (e) {
-        // Fallback if timezone conversion fails
-        statusEl.innerHTML = '<span style="color: #ff6600;">Krauze St 1, Netanya</span>';
+    // Helper to format time properly
+    function formatTime(decimalTime) {
+        const h = Math.floor(decimalTime);
+        const m = (decimalTime - h) * 60;
+        return `${h}:${m === 0 ? '00' : m}`;
     }
+
+    const todaySchedule = schedule[day];
+
+    // 1. Are we currently OPEN?
+    if (todaySchedule && currentTime >= todaySchedule.open && currentTime < todaySchedule.close) {
+        if (lang === 'he') statusElement.innerHTML = '🟢 פתוח כעת • נסגר ב-' + formatTime(todaySchedule.close);
+        else if (lang === 'ru') statusElement.innerHTML = '🟢 Открыто • Закроется в ' + formatTime(todaySchedule.close);
+        else statusElement.innerHTML = '🟢 Open Now • Closes at ' + formatTime(todaySchedule.close);
+        statusElement.style.color = '#4caf50';
+        return;
+    }
+
+    // 2. If CLOSED, calculate exactly when we open next
+    let nextOpenDay = day;
+    let daysAdded = 0;
+
+    // Check if it's early morning before opening time TODAY
+    if (todaySchedule && currentTime < todaySchedule.open) {
+        nextOpenDay = day;
+        daysAdded = 0;
+    } else {
+        // Otherwise, find the next available open day
+        for (let i = 1; i <= 7; i++) {
+            nextOpenDay = (day + i) % 7;
+            if (schedule[nextOpenDay] !== null) {
+                daysAdded = i;
+                break;
+            }
+        }
+    }
+
+    const nextSchedule = schedule[nextOpenDay];
+    const nextTimeStr = formatTime(nextSchedule.open);
+    
+    // Dynamic text for "Today", "Tomorrow", or specific day
+    let dayStr = nextSchedule.name[lang];
+    if (daysAdded === 0) {
+        if (lang === 'he') dayStr = 'היום';
+        else if (lang === 'ru') dayStr = 'сегодня';
+        else dayStr = 'today';
+    } else if (daysAdded === 1) {
+        if (lang === 'he') dayStr = 'מחר';
+        else if (lang === 'ru') dayStr = 'завтра';
+        else dayStr = 'tomorrow';
+    } else {
+         if (lang === 'he') dayStr = 'ביום ' + dayStr;
+         else if (lang === 'ru') dayStr = 'в ' + dayStr;
+         else dayStr = 'on ' + dayStr;
+    }
+
+    // Print final closed string
+    if (lang === 'he') statusElement.innerHTML = '🔴 סגור כעת • ייפתח ' + dayStr + ' בשעה ' + nextTimeStr;
+    else if (lang === 'ru') statusElement.innerHTML = '🔴 Закрыто • Откроется ' + dayStr + ' в ' + nextTimeStr;
+    else statusElement.innerHTML = '🔴 Closed • Opens ' + dayStr + ' at ' + nextTimeStr;
+    
+    statusElement.style.color = '#f44336';
 }
 
-document.addEventListener('DOMContentLoaded', updateStudioStatus);
+// Initialize on load and update every 60 seconds so it flips automatically
+document.addEventListener("DOMContentLoaded", updateStudioStatus);
+setInterval(updateStudioStatus, 60000);

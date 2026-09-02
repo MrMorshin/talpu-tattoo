@@ -20,7 +20,7 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../style.css?v=4"> 
     <link rel="stylesheet" href="../mobile.css" media="(max-width: 768px)">
 
     <link rel="alternate" hreflang="he" href="https://www.talputattoo.com/Info/precare.html">
@@ -48,9 +48,9 @@
             <div class="dropdown">
                 <button>אמנים ▾</button>
                 <div class="dropdown-content">
-                    <a href="../Artists/dudi.html">דודי טל</a>
+                    <a href="../Artists/dudi.html">דודי בר</a>
                     <a href="../Artists/michael.html">מיכאל סינלניקוב</a>
-                    <a href="../Artists/ksenia.html">קסניה פרוחורובה</a>
+                    <a href="../Artists/ksenia.html">קסניה (Somadamantine Ink)</a>
                 </div>
             </div>
             <a href="../index.html#services">שירותים</a>
@@ -64,14 +64,14 @@
                     <a href="faq.html">שאלות נפוצות</a>
                 </div>
             </div>
-            <a href="../index.html#contact" class="btn-book">קביעת תור</a>
+            <a href="#contact" class="btn-book">קביעת תור</a>
         </div>
     </nav>
 </header>
 
     <section id="pre-care" class="precare-section fade-in" style="padding-top: 100px;">
         <h2>איך להתכונן ליום הקעקוע?</h2>
-        <p class="section-subtitle">כמה כללים פשוטים שיבטיחו סשן נוח והחלמה מיטבית של הקעקוע שלך.</p>
+        <p class="section-subtitle">כדי להבטיח סשן בטוח ותוצאה אידיאלית, יש להכין את הגוף מראש בהתאם להנחיות הסטודיו.</p>
         
         <div class="precare-grid">
             <div class="precare-card">
@@ -91,11 +91,73 @@
             </div>
             <div class="precare-card">
                 <span class="precare-icon">🚫</span>
-                <h3>ללא אלכוהול</h3>
-                <p>הימנעו מאלכוהול או מדללי דם 24 שעות לפני הסשן כדי למנוע דימום מוגבר והפרעה לדיו.</p>
+                <h3>ללא אלכוהול או מדללי דם</h3>
+                <p>הימנעו מאלכוהול, אספירין או משככי כאבים מסוימים 24 שעות לפני הסשן כדי למנוע דימום מוגבר והפרעה לדיו.</p>
             </div>
         </div>
     </section>
+
+    <footer id="contact">
+        <div class="footer-location-box">
+            <h3>מפות ושעות פעילות / Location & Hours / Часы работы</h3>
+            <p id="studioStatusContainer" style="margin-bottom: 10px; font-weight: bold;"><span id="studioStatus">Loading status...</span></p>
+            <p>📍 מדרחוב קראוזה 1, נתניה (מיקוד: 4240110)</p>
+            <p>🕒 א', ב', ד', ה': 11:00 - 19:30 | ג', ו': 11:00 - 15:00 | שבת: סגור </p>
+            
+            <div class="map-buttons">
+                <a href="https://waze.com/ul?q=Krauze+St+1,+Netanya&navigate=yes" target="_blank" class="btn-map">🚗 Open in Waze</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Krauze+St+1,+Netanya" target="_blank" class="btn-map">🗺️ Google Maps</a>
+            </div>
+
+            <div class="map-container" style="margin-top: 15px;">
+                <iframe src="https://maps.google.com/maps?q=Krauze+St+1,+Netanya&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <h2>צור קשר</h2>
+        <p>מיקום: נתניה 📍</p>
+        <p>טלפון: 09-7739992 | 09-8619907</p>
+        <p>Instagram: <a href="https://www.instagram.com/somadamantineink" target="_blank" style="color: inherit; text-decoration: underline;">@somadamantineink</a> | <a href="https://www.instagram.com/talpu_tattoo" target="_blank" style="color: inherit; text-decoration: underline;">@talpu_tattoo</a></p>
+        <a href="https://api.whatsapp.com/send?phone=972585766211&text=שלום%20טאלפו%20קעקועים!%20אשמח%20לקבוע%20פגישת%20ייעוץ." class="btn-whatsapp" target="_blank">שלחו לנו הודעה בוואטסאפ</a>
+    </footer>
+
+    <div id="consultationWizard" class="wizard-modal">
+        <div class="wizard-content">
+            <button class="wizard-close" id="closeWizard">&times;</button>
+            <div class="wizard-step active-step" data-step="1">
+                <h3>בחרו את האמן שלכם</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="דודי בר (Dudi Bar)">דודי בר <span style="font-size:0.8rem; color:#888; display:block;">מייסד וותיק התעשייה (מאז 1999)</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="קסניה (Somadamantine Ink)">קסניה (Somadamantine Ink) <span style="font-size:0.8rem; color:#888; display:block;">פיין ליין, בלאקוורק ואסתטיקה מדויקת</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="מיכאל (Michael)">מיכאל <span style="font-size:0.8rem; color:#888; display:block;">איורים אישיים וסבלנות בלתי מתפשרת</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="ללא העדפה / כל אמן פנוי">ללא העדפה / התייעצות כללית</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="2">
+                <h3>בחרו את סגנון הקעקוע</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="פיין ליין ובלאקוורק">פיין ליין (Fine Line) ובלאקוורק</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="קאבר-אפ / חידוש קעקוע">קאבר-אפ / חידוש קעקוע ישן</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="פרויקט גדול / פריהנד">פרויקט גדול / פריהנד מותאם אישית</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="ריאליזם / איורי">ריאליזם / עיצוב איורי</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="3">
+                <h3>בחרו מיקום בגוף</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="זרוע / שרוול">זרוע / שרוול</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="רגל / ירך">רגל / ירך</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="חזה / גב">חזה / גב</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="אחר / לא סגור/ה עדיין">אחר / לא סגור/ה עדיין</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="4">
+                <h3>מוכנים להתחבר</h3>
+                <p style="color: #bbb; text-align: center; margin-bottom: 20px; font-size: 0.95rem;">ריכזנו עבורכם את פרטי הייעוץ. לחצו למטה כדי לפתוח וואטסאפ עם הבקשה שלכם!</p>
+                <div id="wizardSummary" style="background: #1a1a1a; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 0.9rem; border-right: 3px solid #ff6600; text-align: right;"></div>
+                <a href="#" id="whatsappSubmitBtn" class="wizard-submit-btn" target="_blank">שליחת הבקשה בוואטסאפ 💬</a>
+            </div>
+        </div>
+    </div>
 
     <div id="musicPlayerWidget" class="music-player-widget">
         <audio id="bgAudio" loop preload="auto"><source src="../Images/rock-music.mp3" type="audio/mp3"></audio>

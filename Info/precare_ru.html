@@ -20,7 +20,7 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../style.css?v=4"> 
     <link rel="stylesheet" href="../mobile.css" media="(max-width: 768px)">
 
     <link rel="alternate" hreflang="he" href="https://www.talputattoo.com/Info/precare.html">
@@ -48,9 +48,9 @@
             <div class="dropdown">
                 <button>Художники ▾</button>
                 <div class="dropdown-content">
-                    <a href="../Artists/dudi_ru.html">Дуди Таль</a>
+                    <a href="../Artists/dudi_ru.html">Дуди Бар</a>
                     <a href="../Artists/michael_ru.html">Михаил Синельников</a>
-                    <a href="../Artists/ksenia_ru.html">Ксения Прохорова</a>
+                    <a href="../Artists/ksenia_ru.html">Ксения (Somadamantine Ink)</a>
                 </div>
             </div>
             <a href="../index_ru.html#services">Услуги</a>
@@ -64,20 +64,20 @@
                     <a href="faq_ru.html">Частые вопросы</a>
                 </div>
             </div>
-            <a href="../index_ru.html#contact" class="btn-book">Записаться</a>
+            <a href="#contact" class="btn-book">Записаться</a>
         </div>
     </nav>
 </header>
 
     <section id="pre-care" class="precare-section fade-in" style="padding-top: 100px;">
         <h2>КАК ПОДГОТОВИТЬСЯ К СЕАНСУ</h2>
-        <p class="section-subtitle">Простые правила для комфортного сеанса и идеального заживления вашей татуировки.</p>
+        <p class="section-subtitle">Для обеспечения безопасного сеанса и идеального заживления, организм необходимо подготовить. Строго следуйте этим правилам студии перед визитом.</p>
         
         <div class="precare-grid">
             <div class="precare-card">
                 <span class="precare-icon">😴</span>
                 <h3>Хороший сон</h3>
-                <p>Выспитесь накануне визита. Отдохнувший организм намного легче переносит процесс нанесения.</p>
+                <p>Выспитесь накануне визита. Отдохнувший организм намного легче переносит процесс нанесения татуировки.</p>
             </div>
             <div class="precare-card">
                 <span class="precare-icon">🍽️</span>
@@ -87,15 +87,77 @@
             <div class="precare-card">
                 <span class="precare-icon">💧</span>
                 <h3>Пить воду</h3>
-                <p>Пейте достаточно воды за день до сеанса. Увлажненная кожа лучше принимает пигмент.</p>
+                <p>Пейте достаточно воды за день до сеанса. Увлажненная кожа лучше принимает пигмент и быстрее заживает.</p>
             </div>
             <div class="precare-card">
                 <span class="precare-icon">🚫</span>
                 <h3>Без алкоголя</h3>
-                <p>Воздержитесь от алкоголя за 24 часа до сеанса, чтобы избежать повышенной кровоточивости.</p>
+                <p>Воздержитесь от алкоголя, аспирина и других разжижающих кровь препаратов за 24 часа до сеанса, чтобы избежать повышенной кровоточивости.</p>
             </div>
         </div>
     </section>
+
+    <footer id="contact">
+        <div class="footer-location-box">
+            <h3>מפות ושעות פעילות / Location & Hours / Часы работы</h3>
+            <p id="studioStatusContainer" style="margin-bottom: 10px; font-weight: bold;"><span id="studioStatus">Loading status...</span></p>
+            <p>📍 Краузе 1, Нетания (Индекс: 4240110)</p>
+            <p>🕒 Вс, Пн, Ср, Чт: 11:00 - 19:30 | Вт, Пт: 11:00 - 15:00 | Сб: Закрыто</p>
+            
+            <div class="map-buttons">
+                <a href="https://waze.com/ul?q=Krauze+St+1,+Netanya&navigate=yes" target="_blank" class="btn-map">🚗 Open in Waze</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Krauze+St+1,+Netanya" target="_blank" class="btn-map">🗺️ Google Maps</a>
+            </div>
+
+            <div class="map-container" style="margin-top: 15px;">
+                <iframe src="https://maps.google.com/maps?q=Krauze+St+1,+Netanya&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <h2>СВЯЗАТЬСЯ С НАМИ</h2>
+        <p>Адрес: Нетания 📍</p>
+        <p>Телефон: 09-773-9992 | 09-8619907</p>
+        <p>Instagram: <a href="https://www.instagram.com/somadamantineink" target="_blank" style="color: inherit; text-decoration: underline;">@somadamantineink</a> | <a href="https://www.instagram.com/talpu_tattoo" target="_blank" style="color: inherit; text-decoration: underline;">@talpu_tattoo</a></p>
+        <a href="https://api.whatsapp.com/send?phone=972585766211&text=Здравствуйте,%20Talpu%20Tattoo!%20Я%20хочу%20записаться%20на%20консультацию." class="btn-whatsapp" target="_blank">Написать в WhatsApp</a>
+    </footer>
+
+    <div id="consultationWizard" class="wizard-modal">
+        <div class="wizard-content">
+            <button class="wizard-close" id="closeWizard">&times;</button>
+            <div class="wizard-step active-step" data-step="1">
+                <h3>Выберите мастера</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Дуди Бар (Dudi Bar)">Дуди Бар <span style="font-size:0.8rem; color:#888; display:block;">Основатель и опытный мастер (с 1999)</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Ксения (Somadamantine Ink)">Ксения (Somadamantine Ink) <span style="font-size:0.8rem; color:#888; display:block;">Файнлайн, блэкворк и микрореализм</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Михаил (Michael)">Михаил Синельников <span style="font-size:0.8rem; color:#888; display:block;">Индивидуальные иллюстрации и точность</span></button>
+                    <button type="button" class="wizard-option-btn" data-field="artist" data-value="Любой свободный мастер">Без предпочтений / Общая консультация</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="2">
+                <h3>Выберите стиль татуировки</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Файнлайн и Блэкворк">Файнлайн и Блэкворк</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Перекрытие (Cover-Up)">Перекрытие старой татуировки</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Масштабная работа / Фрихенд">Масштабная работа / Фрихенд</button>
+                    <button type="button" class="wizard-option-btn" data-field="style" data-value="Реализм / Иллюстрация">Реализм / Иллюстрация</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="3">
+                <h3>Выберите место нанесения</h3>
+                <div class="wizard-options-grid">
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Рука / Рукав">Рука / Рукав</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Нога / Бедро">Нога / Бедро</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Грудь / Спина">Грудь / Спина</button>
+                    <button type="button" class="wizard-option-btn" data-field="placement" data-value="Другое / Пока не знаю">Другое / Пока не знаю</button>
+                </div>
+            </div>
+            <div class="wizard-step" data-step="4">
+                <h3>Готово к отправке</h3>
+                <p style="color: #bbb; text-align: center; margin-bottom: 20px; font-size: 0.95rem;">Мы собрали детали вашей консультации. Нажмите ниже, чтобы открыть WhatsApp с запросом!</p>
+                <div id="wizardSummary" style="background: #1a1a1a; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 0.9rem; border-left: 3px solid #ff6600;"></div>
+                <a href="#" id="whatsappSubmitBtn" class="wizard-submit-btn" target="_blank">Отправить в WhatsApp 💬</a>
+            </div>
+        </div>
+    </div>
 
     <div id="musicPlayerWidget" class="music-player-widget">
         <audio id="bgAudio" loop preload="auto"><source src="../Images/rock-music.mp3" type="audio/mp3"></audio>
