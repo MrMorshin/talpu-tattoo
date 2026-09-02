@@ -105,7 +105,7 @@ header nav { display: flex !important; justify-content: space-between !important
     transform: translateY(-1px) !important;
 }
 
-.hamburger { display: none !important; }
+.hamburger-menu { display: none !important; }
 
 /* --- 6. "BOOK NOW" & ACTION BUTTONS --- */
 .btn-book { background-color: #e60000; padding: 10px 24px; border-radius: 4px; font-weight: bold; color: white; transition: 0.3s; text-decoration: none; }
@@ -158,11 +158,50 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
 [dir="rtl"] .timeline-text, [dir="rtl"] .timeline-content-box { text-align: right; }
 
 /* --- 12. INSTAGRAM FEED SECTION --- */
-.instagram-section { padding: 60px 20px; text-align: center; }
-.instagram-container h2 { margin-bottom: 10px; color: #fff; }
-.ig-handle { margin-bottom: 30px; font-size: 1.1rem; }
-.ig-handle a { color: #e60000; text-decoration: none; font-weight: bold; transition: 0.3s ease; }
-.ig-handle a:hover { color: #ff1a1a; }
+.instagram-banner {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 90%;
+}
+
+.instagram-banner h3 {
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.ig-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ig-links a {
+    color: #ffffff; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.ig-links .divider {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .ig-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .ig-links .divider {
+        display: none; 
+    }
+}
 
 /* --- 13. ARTIST PROFILE PAGES --- */
 .artist-page-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0d0d0d; z-index: -2; }
@@ -366,12 +405,6 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
     transform: scale(1.1);
 }
 
-@keyframes pulseWhatsapp {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-
 @media (max-width: 768px) {
     .floating-whatsapp {
         bottom: 15px;
@@ -466,7 +499,7 @@ footer p { color: #aaaaaa; margin-bottom: 10px; }
    CUSTOM ANIMATED CURSOR
    ========================================================== */
 @media (pointer: fine) {
-    body, a, button, .service-card, .precare-card, .flash-card, input, .hamburger { 
+    body, a, button, .service-card, .precare-card, .flash-card, input, .hamburger-menu { 
         cursor: none !important; 
     }
 }
@@ -624,16 +657,6 @@ body::after {
 
 /* --- CLEAN & MINIMALIST MOBILE MENU --- */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block !important;
-        background: transparent !important;
-        border: none !important;
-        color: #fff !important;
-        font-size: 1.8rem !important;
-        cursor: pointer !important;
-        z-index: 1001;
-    }
-
     .nav-right {
         position: fixed !important;
         top: 0 !important;
@@ -721,61 +744,61 @@ body::after {
     }
 }
 
-    /* Force all main menu links and buttons to center */
-    .nav-right > a, 
-    .nav-right .dropdown {
-        width: 100% !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
+/* Force all main menu links and buttons to center */
+.nav-right > a, 
+.nav-right .dropdown {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
 
-    .nav-right > a, 
-    .nav-right .dropdown > button {
-        font-size: 1.1rem !important;
-        letter-spacing: 3px !important;
-        justify-content: center !important;
-        text-align: center !important;
-        width: 100% !important;
-    }
+.nav-right > a, 
+.nav-right .dropdown > button {
+    font-size: 1.1rem !important;
+    letter-spacing: 3px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+}
 
-    /* Convert desktop absolute dropdowns into clean, centered mobile accordions */
-    .nav-right .dropdown-content {
-        position: static !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        width: 100% !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        margin-top: 6px !important;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
+/* Convert desktop absolute dropdowns into clean, centered mobile accordions */
+.nav-right .dropdown-content {
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin-top: 6px !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
 
-    /* Expand dropdown when tapped/active on mobile */
-    .nav-right .dropdown:hover .dropdown-content,
-    .nav-right .dropdown:focus-within .dropdown-content,
-    .nav-right .dropdown:active .dropdown-content {
-        max-height: 250px !important;
-    }
+/* Expand dropdown when tapped/active on mobile */
+.nav-right .dropdown:hover .dropdown-content,
+.nav-right .dropdown:focus-within .dropdown-content,
+.nav-right .dropdown:active .dropdown-content {
+    max-height: 250px !important;
+}
 
-    .nav-right .dropdown-content a {
-        text-align: center !important;
-        padding: 6px 0 !important;
-        color: #aaaaaa !important;
-        font-size: 0.95rem !important;
-        width: 100% !important;
-    }
+.nav-right .dropdown-content a {
+    text-align: center !important;
+    padding: 6px 0 !important;
+    color: #aaaaaa !important;
+    font-size: 0.95rem !important;
+    width: 100% !important;
+}
 
-    .nav-right .dropdown-content a:hover {
-        color: #ff6600 !important;
-        background: transparent !important;
-    }
+.nav-right .dropdown-content a:hover {
+    color: #ff6600 !important;
+    background: transparent !important;
+}
 
 
 /* --- FOOLPROOF RTL FOOTER LOCATION BOX FIX --- */

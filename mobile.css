@@ -38,17 +38,36 @@
     }
 
     /* --- FORCED VISIBLE MOBILE HAMBURGER BUTTON --- */
-    .hamburger {
-        display: block !important;
+    .hamburger-menu {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
         background: transparent !important;
         border: none !important;
-        color: #ffffff !important;
-        font-size: 1.8rem !important;
         cursor: pointer !important;
-        padding: 0 10px !important;
-        line-height: 1 !important;
+        padding: 0 !important;
         z-index: 10005 !important;
         pointer-events: auto !important;
+    }
+
+    .hamburger-menu .bar {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff; 
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
     }
 
     /* Full-Height Menu Overlay */
@@ -182,27 +201,8 @@
         font-size: 1.6rem;
     }
 
-    /* Map Adjustments for Mobile */
-    .footer-location-box {
-        padding: 0 10px;
-    }
-    .map-container iframe {
-        height: 200px !important;
-    }
-
-    /* --- MOBILE RESPONSIVE HAMBURGER MENU DRAWER --- */
+/* --- MOBILE RESPONSIVE HAMBURGER MENU DRAWER --- */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block !important;
-        background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%) !important;
-        border: 1px solid rgba(255, 102, 0, 0.4) !important;
-        color: #ff6600 !important;
-        font-size: 1.3rem !important;
-        padding: 6px 12px !important;
-        border-radius: 8px !important;
-        cursor: pointer !important;
-    }
-
     .nav-right {
         position: fixed !important;
         top: 65px !important;
