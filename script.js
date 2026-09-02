@@ -224,9 +224,8 @@ document.addEventListener("click", function(e) {
 });
 
 // --- 9. ULTRA-PERMISSIVE HAMBURGER MENU ---
-// This grabs ANY click on the hamburger and toggles ANY menu it finds, bypassing all structural differences.
 document.addEventListener("click", function(e) {
-    const hamburgerBtn = e.target.closest(".hamburger") || (e.target.tagName === "BUTTON" && e.target.textContent.includes("☰"));
+    const hamburgerBtn = e.target.closest(".hamburger-menu");
     
     if (hamburgerBtn) {
         e.preventDefault();
@@ -236,7 +235,7 @@ document.addEventListener("click", function(e) {
         
         if (navRight) {
             navRight.classList.toggle("active");
-            hamburgerBtn.textContent = navRight.classList.contains("active") ? "✕" : "☰";
+            hamburgerBtn.classList.toggle("active");
         }
         return;
     }
@@ -247,8 +246,8 @@ document.addEventListener("click", function(e) {
         const navRight = clickedLink.closest(".nav-right, .nav-menu");
         if (navRight) {
             navRight.classList.remove("active");
-            const hamburgerIcon = document.querySelector(".hamburger");
-            if (hamburgerIcon) hamburgerIcon.textContent = "☰";
+            const hamburgerIcon = document.querySelector(".hamburger-menu");
+            if (hamburgerIcon) hamburgerIcon.classList.remove("active");
         }
     }
 });
@@ -288,12 +287,12 @@ if (window.matchMedia("(pointer: fine)").matches) {
 
    // Expand the ring when hovering over anything clickable
     document.addEventListener("mouseover", (e) => {
-        if(e.target.closest("a, button, .service-card, .precare-card, .flash-card, .timeline-tab, .hamburger, .floating-whatsapp, #lightbox-close, .flash-img-wrapper img")) {
+        if(e.target.closest("a, button, .service-card, .precare-card, .flash-card, .timeline-tab, .hamburger-menu, .floating-whatsapp, #lightbox-close, .flash-img-wrapper img")) {
             cursorRing.classList.add("hover-active");
         }
     });
     document.addEventListener("mouseout", (e) => {
-        if(e.target.closest("a, button, .service-card, .precare-card, .flash-card, .timeline-tab, .hamburger, .floating-whatsapp, #lightbox-close, .flash-img-wrapper img")) {
+        if(e.target.closest("a, button, .service-card, .precare-card, .flash-card, .timeline-tab, .hamburger-menu, .floating-whatsapp, #lightbox-close, .flash-img-wrapper img")) {
             cursorRing.classList.remove("hover-active");
         }
     });
