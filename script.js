@@ -225,14 +225,11 @@ document.addEventListener("click", function(e) {
 
 // --- 9. ULTRA-PERMISSIVE HAMBURGER MENU ---
 document.addEventListener("click", function(e) {
-    const hamburgerBtn = e.target.closest(".hamburger-menu");
+    const hamburgerBtn = e.target.closest(".hamburger-menu") || e.target.closest(".hamburger");
     
     if (hamburgerBtn) {
         e.preventDefault();
-        
-        // Find the menu container globally or locally
         const navRight = document.querySelector(".nav-right, .nav-menu, #mobileNav");
-        
         if (navRight) {
             navRight.classList.toggle("active");
             hamburgerBtn.classList.toggle("active");
@@ -240,13 +237,12 @@ document.addEventListener("click", function(e) {
         return;
     }
 
-    // Close menu when clicking a link inside it
     const clickedLink = e.target.closest(".nav-right a, .nav-menu a");
     if (clickedLink && !clickedLink.closest(".dropdown")) {
         const navRight = clickedLink.closest(".nav-right, .nav-menu");
         if (navRight) {
             navRight.classList.remove("active");
-            const hamburgerIcon = document.querySelector(".hamburger-menu");
+            const hamburgerIcon = document.querySelector(".hamburger-menu") || document.querySelector(".hamburger");
             if (hamburgerIcon) hamburgerIcon.classList.remove("active");
         }
     }
