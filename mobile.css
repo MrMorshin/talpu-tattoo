@@ -65,4 +65,52 @@
     .wizard-content { width: 92% !important; padding: 20px 15px !important; }
     .music-player-widget { bottom: 15px !important; left: 15px !important; max-width: 170px !important; min-height: 45px !important; padding: 6px 10px !important; }
     .music-toggle-btn { width: 30px !important; height: 30px !important; }
+
+    /* --- ARTIST PROFILE MOBILE FIXES (FORCED FULL SIZE) --- */
+    .artist-profile {
+        flex-direction: column !important;
+        display: flex !important;
+        padding: 20px 10px !important;
+        margin-top: 10px !important;
+        align-items: center !important;
+    }
+    
+    .artist-image {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .artist-image img {
+        width: 90vw !important;
+        max-width: 400px !important;
+        height: auto !important;
+        max-height: 450px !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.9) !important;
+        border: 1px solid rgba(255, 102, 0, 0.4) !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    .artist-bio {
+        background: linear-gradient(135deg, rgba(15,15,15,0.95) 0%, rgba(5,5,5,0.98) 100%) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        padding: 30px 20px !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 102, 0, 0.3) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+        width: 100% !important;
+        max-width: 500px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+    
+    .artist-bio h1 { font-size: 2.2rem !important; margin-bottom: 5px !important; }
+    .artist-bio h2 { color: #ff6600 !important; font-size: 1.1rem !important; margin-bottom: 15px !important; }
+    .artist-bio p { font-size: 1rem !important; color: #e0e0e0 !important; }
 }
