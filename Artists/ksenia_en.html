@@ -11,11 +11,19 @@
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-    <link rel="stylesheet" href="../style.css?v=6"> 
-    <link rel="stylesheet" href="../mobile.css?v=6" media="(max-width: 768px)">
+    <link rel="stylesheet" href="../style.css?v=9"> 
+    <link rel="stylesheet" href="../mobile.css?v=9" media="(max-width: 768px)">
     <link rel="alternate" hreflang="he" href="https://www.talputattoo.com/Artists/ksenia.html">
     <link rel="alternate" hreflang="en" href="https://www.talputattoo.com/Artists/ksenia_en.html">
     <link rel="alternate" hreflang="ru" href="https://www.talputattoo.com/Artists/ksenia_ru.html">
+    <style>
+        @media (max-width: 768px) {
+            .artist-profile { flex-direction: column !important; display: flex !important; align-items: center !important; padding: 15px !important; }
+            .artist-image { width: 100% !important; display: flex !important; justify-content: center !important; margin-bottom: 20px !important; float: none !important; max-width: none !important; }
+            .artist-image img { width: 100% !important; max-width: 100% !important; height: auto !important; max-height: 450px !important; object-fit: cover !important; border-radius: 12px !important; border: 1px solid rgba(255,102,0,0.4) !important; box-shadow: 0 15px 40px rgba(0,0,0,0.9) !important; display: block !important; margin: 0 auto !important; float: none !important; }
+            .artist-bio { width: 100% !important; max-width: 100% !important; background: linear-gradient(135deg, rgba(15,15,15,0.95) 0%, rgba(5,5,5,0.98) 100%) !important; backdrop-filter: blur(15px) !important; padding: 30px 20px !important; border-radius: 12px !important; border: 1px solid rgba(255,102,0,0.3) !important; text-align: left !important; box-sizing: border-box !important; }
+        }
+    </style>
 </head>
 <body>
     <div id="preloader"><img src="../Images/Talpu_logo.png" alt="Loading" class="preloader-logo"></div>
@@ -86,6 +94,11 @@
         <p>Location: Krauze St 1, Netanya 📍</p>
         <p>Phone: 09-7739992 | 09-8619907</p>
         <p>Instagram: <a href="https://www.instagram.com/somadamantineink" target="_blank" style="color: inherit; text-decoration: underline;">@somadamantineink</a></p>
+
+        <!-- STANDOUT CREDIT TAG -->
+        <div class="footer-credit fade-in">
+            <p>Website By: <a href="https://www.instagram.com/alexmichaelyuk/" target="_blank">@alexmichaelyuk</a></p>
+        </div>
     </footer>
 
     <div id="consultationWizard" class="wizard-modal">
@@ -146,6 +159,6 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-    <script src="../script.js?v=6"></script>
+    <script src="../script.js?v=9"></script>
 </body>
 </html>
